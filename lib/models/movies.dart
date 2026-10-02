@@ -5,6 +5,12 @@ class Movies {
   final String dateTime;
   final String imagePath;
 
+  const Movies ({
+    required this.id,
+    required this.name,
+    required this. description,
+    required this.dateTime,
+    required this. imagePath,
+    });
 
-Movies (this.id, this.name, this.description, this.dateTime, this.imagePath);
 }
