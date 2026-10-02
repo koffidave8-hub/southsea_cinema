@@ -63,7 +63,7 @@ class MovieListing extends StatefulWidget {
               ),
               SizedBox(width: 20),
                   Text('Adult (£7.50)'),
-                  SizedBox(height: 30),
+        
                 ],
               ),
               ElevatedButton(
@@ -75,6 +75,7 @@ class MovieListing extends StatefulWidget {
                 child: Text('ADD TO ORDER'),
                 
               ),
+              SizedBox(height: 15),
               Text(_message),
               
             ],
