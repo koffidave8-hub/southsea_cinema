@@ -15,7 +15,15 @@ class MovieListing extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: const Text("DRACULA (1931 (PG))"),
+      body: const Column(
+  children: [
+    Text('DRACULA (1931) (PG)'),
+    Text('Southsea Cinema Room'),
+    Text('Thursday 22 Oct 2026, 18:00  - ends at 19:14'),
+    Text('Select Quantities (Up to 5 in total)'),
+    Text('Tickets'),
+  ],
+),
     );
   }
 }
