@@ -20,7 +20,16 @@ class MovieListing extends StatefulWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body:  Column(
+      body:  Container(
+  color: cinemaSurface,
+  width: double.infinity,
+  height: double.infinity,
+  padding: const EdgeInsets.all(24),
+  child: DefaultTextStyle(
+    style: const TextStyle(color: Colors.white, fontSize: 16),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+
   children: [
     Text('DRACULA (1931) (PG)'),
     Text('Southsea Cinema Room'),
@@ -45,25 +54,23 @@ class MovieListing extends StatefulWidget {
                   DropdownMenuEntry(value: 5, label: '5'),
                 ],
               ),
+              SizedBox(width: 16),
+                  Text('Adult (£7.50)'),
+                ],
+              ),
               ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _message = '$_tickets ticket(s) added to your order';
-                });
-              },
-              child: Text('ADD TO ORDER'),
-            ),
-            Text(_message),
-          ],
+                onPressed: () {
+                  setState(() {
+                    _message = '$_tickets ticket(s) added to your order';
+                  });
+                },
+                child: Text('ADD TO ORDER'),
+              ),
+              Text(_message),
+            ],
+          ),
         ),
-               SizedBox(width: 16),
-               Text('Adult (£7.50)'),
-            
-          Text('You picked: $_tickets'),
- 
-    
-  ],
-),
+      ),
     );
   }
 }
