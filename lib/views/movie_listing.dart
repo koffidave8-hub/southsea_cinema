@@ -9,7 +9,7 @@ class MovieListing extends StatefulWidget {
   State<MovieListing> createState() => _MovieListingState();}
   class _MovieListingState extends State<MovieListing> {
   int _tickets = 0;
-  String _message = '';
+  String _message = '' ;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
