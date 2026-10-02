@@ -32,12 +32,10 @@ class MovieListing extends StatefulWidget {
 
   children: [
     Text('DRACULA (1931) (PG)', style: TextStyle(fontSize: 30), ),
-    SizedBox(height: 20),
+    SizedBox(height: 30),
     Text('Southsea Cinema Room'),
     SizedBox(height: 10),
     Text('Thursday 22 Oct 2026, 18:00  - ends at 19:14'),
-    SizedBox(height: 20),
-    Text('Select Quantities (Up to 5 in total)'),
     SizedBox(height: 20),
     Text('Please note thot Discounts / Membership Benefits will be applied once you have selected your tickets'),
     SizedBox(height: 10),
@@ -62,7 +60,7 @@ class MovieListing extends StatefulWidget {
                   DropdownMenuEntry(value: 5, label: '5'),
                 ],
               ),
-              SizedBox(width: 20, height:20),
+              SizedBox(width: 20),
                   Text('Adult (£7.50)'),
                 ],
               ),
