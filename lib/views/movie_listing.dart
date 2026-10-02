@@ -31,11 +31,19 @@ class MovieListing extends StatefulWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
 
   children: [
-    Text('DRACULA (1931) (PG)'),
+    Text('DRACULA (1931) (PG)', style: TextStyle(fontSize: 30), ),
+    SizedBox(height: 16),
     Text('Southsea Cinema Room'),
+    SizedBox(height: 8),
     Text('Thursday 22 Oct 2026, 18:00  - ends at 19:14'),
+    SizedBox(height: 16),
     Text('Select Quantities (Up to 5 in total)'),
-    Text('Tickets'),
+    SizedBox(height: 16),
+    Text('Please note thot Discounts / Membership Benefits will be applied once you have selected your tickets'),
+    SizedBox(height: 8),
+    Text('Select Quantities (Up to 5 in total)'),
+    SizedBox(height: 16),
+    Text('Tickets', style: TextStyle(fontWeight: FontWeight.bold)),
     Row(
             children: [
               DropdownMenu<int>(
