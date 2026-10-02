@@ -42,6 +42,7 @@ class MovieListing extends StatefulWidget {
     Text('Select Quantities (Up to 5 in total)'),
     SizedBox(height: 30),
     Text('Tickets', style: TextStyle(fontWeight: FontWeight.bold)),
+    SizedBox(height: 15),
     Row(
             children: [
               DropdownMenu<int>(
@@ -71,8 +72,10 @@ class MovieListing extends StatefulWidget {
                   });
                 },
                 child: Text('ADD TO ORDER'),
+                
               ),
               Text(_message),
+              SizedBox(height: 15),
             ],
           ),
         ),
