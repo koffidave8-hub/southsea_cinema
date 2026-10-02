@@ -66,6 +66,7 @@ class MovieListing extends StatefulWidget {
         
                 ],
               ),
+              SizedBox(height: 15),
               ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -75,7 +76,7 @@ class MovieListing extends StatefulWidget {
                 child: Text('ADD TO ORDER'),
                 
               ),
-              SizedBox(height: 15),
+              
               Text(_message),
               
             ],
