@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
+import 'package:southsea_cinema/models/movies.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
 class MovieListing extends StatefulWidget {
-  const MovieListing({super.key});
+  final Movies movie;
+
+  const MovieListing({super.key, required this.movie});
 
   @override
   State<MovieListing> createState() => _MovieListingState();
@@ -33,9 +36,9 @@ class _MovieListingState extends State<MovieListing> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'DRACULA (1931) (PG)',
-                style: TextStyle(fontSize: 30),
-              ),
+                  widget.movie.name,
+                  style: const TextStyle(fontSize: 30),
+                ),
               SizedBox(height: 30),
               Text('Southsea Cinema Room'),
               SizedBox(height: 15),
@@ -67,7 +70,7 @@ class _MovieListingState extends State<MovieListing> {
                     ],
                   ),
                   SizedBox(width: 20),
-                  Text('Adult (£7.50)'),
+                  Text('Adult (${widget.movie.formattedPrice})'),
                 ],
               ),
               SizedBox(height: 20),

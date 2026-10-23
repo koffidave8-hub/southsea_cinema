@@ -3,6 +3,7 @@ import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/views/home_view.dart';
 import 'package:southsea_cinema/models/repositories/movie_repository.dart';
 import 'package:southsea_cinema/widgets/movie_card.dart'; 
+ 
 
 void main() {
   runApp(const SouthseaCinemaApp());
