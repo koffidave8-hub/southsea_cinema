@@ -18,6 +18,14 @@ class MovieCard extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Image.asset (
+                    movies.imagePath,
+                    width: 80,
+                    height: 140,
+                    fit: BoxFit.cover,
+                    
+                ),
+                const SizedBox(width: 16),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,14 +45,7 @@ class MovieCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                Image.asset (
-                    movies.imagePath,
-                    width: 80,
-                    height: 140,
-                    fit: BoxFit.cover,
-                    
-                ),
-                const SizedBox(width: 16),
+                
               ],
             ),
           ],
