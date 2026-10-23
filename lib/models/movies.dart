@@ -1,10 +1,9 @@
-import 'dart:nativewrappers/_internal/vm/lib/ffi_native_type_patch.dart';
 
 class Movies {
   final String id;
   final String name;
   final String description;
-  final List dateTime;
+  final String dateTime;
   final double ticketPrice;
   final String imagePath;
 
