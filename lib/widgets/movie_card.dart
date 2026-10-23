@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/models/movies.dart';
 
 class MovieCard extends StatelessWidget {
@@ -9,45 +10,48 @@ class MovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: cinemaSurface, 
+      elevation: 0,
       margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+        side: const BorderSide(color: cinemaBrand), 
+      ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        movies.name,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
+        padding: const EdgeInsets.all(24),
+        child: DefaultTextStyle(
+          style: const TextStyle(color: Colors.white, fontSize: 16),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      movies.name,
+                      style: const TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
                       ),
-                      const SizedBox(height: 8),
-                      Text(
-                        movies.description,
-                        style: const TextStyle(color: Colors.black54),
-                      ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(height: 15),
+                    Text(
+                      movies.description,
+                      style: const TextStyle(color: Colors.white70),
+                    ),
+                  ],
                 ),
-                Image.asset (
-                    movies.imagePath,
-                    width: 80,
-                    height: 140,
-                    fit: BoxFit.cover,
-                    
-                ),
-                const SizedBox(width: 16),
-              ],
-            ),
-          ],
+              ),
+              const SizedBox(width: 16),
+              Image.asset(
+                movies.imagePath,
+                width: 80,
+                height: 140,
+                fit: BoxFit.cover,
+              ),
+            ],
+          ),
         ),
       ),
     );
