@@ -38,7 +38,8 @@ class MovieCard extends StatelessWidget {
                 Expanded(
                   child: Text(
                     movies.description,
-                    style: const TextStyle(color: Colors.white70),
+                    style: const TextStyle(color: Colors.white
+                    ),
                   ),
                 ),
               ],
