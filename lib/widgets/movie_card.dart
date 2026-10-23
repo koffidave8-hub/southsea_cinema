@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/models/movies.dart';
 
 class MovieCard extends StatelessWidget {
@@ -21,6 +21,7 @@ class MovieCard extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
+                color:  cinemaBrand
               ),
             ),
             const SizedBox(height: 15),
@@ -29,8 +30,8 @@ class MovieCard extends StatelessWidget {
               children: [
                 Image.asset(
                   movies.imagePath,
-                  width: 80,
-                  height: 140,
+                  width: 160,
+                  height: 280,
                   fit: BoxFit.cover,
                 ),
                 const SizedBox(width: 16),
