@@ -42,7 +42,7 @@ class _MovieListingState extends State<MovieListing> {
               SizedBox(height: 30),
               Text('Southsea Cinema Room'),
               SizedBox(height: 15),
-              Text('Thursday 22 Oct 2026, 18:00  - ends at 19:14'),
+              Text('(${widget.movie.dateTime})'),
               SizedBox(height: 30),
               Text(
                   'Please note that Discounts / Membership Benefits will be applied once you have selected your tickets'),
