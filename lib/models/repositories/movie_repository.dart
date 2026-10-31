@@ -6,7 +6,7 @@ class MovieRepository {
       Movies(
         id: 'Kill_Bill_TWBA',
         name: 'Kill Bill: The Whole Bloody Affair',
-        description:'THE 4TH FILM BY QUENTIN TARANTINO. UNCUT, UNRATED, AND SHOWN IN ITS ENTIRETY. A former assassin, known simply as The Bride, wakes from a coma four years after her jealous ex-lover Bill attempts to murder her on her wedding day. Fueled by an insatiable desire for revenge, she vows to get even with every person who contributed to the loss of her unborn child, her entire wedding party, and four years of her life. After devising a hit list, The Bride sets off on her quest, enduring unspeakable injury and unscrupulous enemies.',
+        description:'A former assassin, known simply as The Bride, wakes from a coma four years after her jealous ex-lover Bill attempts to murder her on her wedding day. Fueled by an insatiable desire for revenge, she vows to get even with every person who contributed to the loss of her unborn child, her entire wedding party, and four years of her life.',
         dateTime:'Friday 16 oct 2026, 15:00',
         ticketPrice: 7.5,
         imagePath:'assets/images/KillBillTheWholeBloddyAffair.jpg',
