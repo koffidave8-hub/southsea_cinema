@@ -33,14 +33,6 @@ class HomeView extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: ListView(
-              children: [
-                for (final movie in MovieRepository().getMovies())
-                  MovieCard(movies: movie),
-              ],
-            ),
-          ),
         ],
       ),
     );
