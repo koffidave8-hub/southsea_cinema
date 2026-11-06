@@ -6,7 +6,7 @@ void main() {
     test('creates Movies instance with given properties', () {
       const movie = Movies(
         id: 'film_test',
-        name: 'Test ',
+        name: 'Test',
         description: 'test test test.',
         dateTime: 'Friday 16 oct 2026, 15:00',
         ticketPrice: 7.5,
