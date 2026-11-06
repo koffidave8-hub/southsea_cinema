@@ -7,7 +7,7 @@ void main() {
       const movie = Movies(
         id: 'film_test',
         name: 'Test',
-        description: 'test test test.',
+        description: 'test test test',
         dateTime: 'Friday 16 oct 2026, 15:00',
         ticketPrice: 7.5,
         imagePath: 'assets/images/test.jpg',
