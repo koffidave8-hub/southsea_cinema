@@ -15,6 +15,7 @@ class MovieListing extends StatefulWidget {
 class _MovieListingState extends State<MovieListing> {
   int _tickets = 0;
   String _message = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,78 +33,73 @@ class _MovieListingState extends State<MovieListing> {
         padding: const EdgeInsets.all(24),
         child: DefaultTextStyle(
           style: const TextStyle(color: Colors.white, fontSize: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset(
-                    widget.movie.imagePath,
-                    width: 160,
-                    height: 280,
-                    fit: BoxFit.cover,
-                  ),
-                  const SizedBox(width: 16),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.movie.name,
-                          style: const TextStyle(fontSize: 30),
-                        ),
-                        SizedBox(height: 30),
-                        Text('Southsea Cinema Room'),
-                        SizedBox(height: 15),
-                        Text('(${widget.movie.dateTime})'),
-                      ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.asset(
+                  widget.movie.imagePath,
+                  width: 160,
+                  height: 280,
+                  fit: BoxFit.cover,
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  widget.movie.name,
+                  style: const TextStyle(fontSize: 30),
+                ),
+                const SizedBox(height: 30),
+                const Text('Southsea Cinema Room'),
+                const SizedBox(height: 15),
+                Text('(${widget.movie.dateTime})'),
+                const SizedBox(height: 30),
+                const Text(
+                  'Please note that Discounts / Membership Benefits will be '
+                  'applied once you have selected your tickets',
+                ),
+                const SizedBox(height: 15),
+                const Text('Select Quantities (Up to 5 in total)'),
+                const SizedBox(height: 30),
+                const Text(
+                  'Tickets',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 15),
+                Row(
+                  children: [
+                    DropdownMenu<int>(
+                      key: const Key('ticketDropdown'),
+                      initialSelection: 0,
+                      onSelected: (int? value) {
+                        setState(() {
+                          _tickets = value ?? 0;
+                        });
+                      },
+                      dropdownMenuEntries: List.generate(
+                        6,
+                        (i) => DropdownMenuEntry<int>(value: i, label: '$i'),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 30),
-              Text(
-                  'Please note that Discounts / Membership Benefits will be applied once you have selected your tickets'),
-              SizedBox(height: 15),
-              Text('Select Quantities (Up to 5 in total)'),
-              SizedBox(height: 30),
-              Text('Tickets', style: TextStyle(fontWeight: FontWeight.bold)),
-              SizedBox(height: 15),
-              Row(
-                children: [
-                  DropdownMenu<int>(
-                    initialSelection: 0,
-                    onSelected: (int? value) {
-                      setState(() {
-                        _tickets = value ?? 0;
-                      });
-                    },
-                    dropdownMenuEntries: [
-                      DropdownMenuEntry(value: 0, label: '0'),
-                      DropdownMenuEntry(value: 1, label: '1'),
-                      DropdownMenuEntry(value: 2, label: '2'),
-                      DropdownMenuEntry(value: 3, label: '3'),
-                      DropdownMenuEntry(value: 4, label: '4'),
-                      DropdownMenuEntry(value: 5, label: '5'),
-                    ],
-                  ),
-                  SizedBox(width: 20),
-                  Text('Adult (${widget.movie.formattedPrice})'),
-                ],
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    _message = '$_tickets ticket(s) added to your order';
-                  });
-                },
-                child: Text('ADD TO ORDER'),
-              ),
-              SizedBox(height: 20),
-              Text(_message),
-            ],
+                    const SizedBox(width: 20),
+                    Text('Adult (${widget.movie.formattedPrice})'),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  key: const Key('addToOrderButton'),
+                  onPressed: () {
+                    setState(() {
+                      _message = _tickets == 0
+                          ? 'Please select at least one ticket'
+                          : '$_tickets ticket(s) added to your order';
+                    });
+                  },
+                  child: const Text('ADD TO ORDER'),
+                ),
+                const SizedBox(height: 20),
+                Text(_message),
+              ],
+            ),
           ),
         ),
       ),
