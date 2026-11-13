@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/views/home_view.dart';
-import 'package:southsea_cinema/models/repositories/movie_repository.dart';
-import 'package:southsea_cinema/widgets/movie_card.dart'; 
+
  
 
 void main() {
@@ -28,16 +27,7 @@ class SouthseaCinemaApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeView(),
-        '/listing': (context) => Scaffold(
-              appBar: AppBar(title: const Text('Now Showing')),
-              body: ListView(
-                children: [
-                  for (final m in MovieRepository().getMovies())
-                    MovieCard(movies: m),
-                ],
-              ),
-            ),
-      },
+       },
     );
   }
 }
