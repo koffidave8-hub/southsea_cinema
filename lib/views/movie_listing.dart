@@ -35,14 +35,33 @@ class _MovieListingState extends State<MovieListing> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                  widget.movie.name,
-                  style: const TextStyle(fontSize: 30),
-                ),
-              SizedBox(height: 30),
-              Text('Southsea Cinema Room'),
-              SizedBox(height: 15),
-              Text('(${widget.movie.dateTime})'),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    widget.movie.imagePath,
+                    width: 160,
+                    height: 280,
+                    fit: BoxFit.cover,
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.movie.name,
+                          style: const TextStyle(fontSize: 30),
+                        ),
+                        SizedBox(height: 30),
+                        Text('Southsea Cinema Room'),
+                        SizedBox(height: 15),
+                        Text('(${widget.movie.dateTime})'),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
               SizedBox(height: 30),
               Text(
                   'Please note that Discounts / Membership Benefits will be applied once you have selected your tickets'),
