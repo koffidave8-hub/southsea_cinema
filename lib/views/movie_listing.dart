@@ -37,6 +37,10 @@ class _MovieListingState extends State<MovieListing> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text(
+                  widget.movie.name,
+                  style: const TextStyle(fontSize: 30),
+                ),
                 Image.asset(
                   widget.movie.imagePath,
                   width: 160,
@@ -44,10 +48,7 @@ class _MovieListingState extends State<MovieListing> {
                   fit: BoxFit.cover,
                 ),
                 const SizedBox(height: 16),
-                Text(
-                  widget.movie.name,
-                  style: const TextStyle(fontSize: 30),
-                ),
+                
                 const SizedBox(height: 30),
                 const Text('Southsea Cinema Room'),
                 const SizedBox(height: 15),
@@ -60,13 +61,12 @@ class _MovieListingState extends State<MovieListing> {
                 const SizedBox(height: 15),
                 const Text('Select Quantities (Up to 5 in total)'),
                 const SizedBox(height: 30),
-                const Text(
-                  'Tickets',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
+                
                 const SizedBox(height: 15),
                 Row(
                   children: [
+                    const SizedBox(width: 20),
+                    Text('Tickets (${widget.movie.formattedPrice} each)'),
                     DropdownMenu<int>(
                       key: const Key('ticketDropdown'),
                       initialSelection: 0,
@@ -80,12 +80,17 @@ class _MovieListingState extends State<MovieListing> {
                         (i) => DropdownMenuEntry<int>(value: i, label: '$i'),
                       ),
                     ),
-                    const SizedBox(width: 20),
-                    Text('Adult (${widget.movie.formattedPrice})'),
+                    
                   ],
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton(
+                ElevatedButton(style: ElevatedButton.styleFrom(
+                      backgroundColor: cinemaBrand,
+                      foregroundColor: cinemaFontWhite,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.zero,
+                      ),
+                    ),
                   key: const Key('addToOrderButton'),
                   onPressed: () {
                     setState(() {
