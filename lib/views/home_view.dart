@@ -11,32 +11,10 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          appTitle,
-          style: cinemaHeaderStyle,
-        ),
-        backgroundColor: cinemaSurface,
-        iconTheme: const IconThemeData(color: cinemaBrand),
-        elevation: 0,
+        title: const Text(appTitle),
+        
       ),
-      drawer: const NavDrawer(),
-      body: ListView(
-        padding: const EdgeInsets.all(16.0),
-        children: [
-          const Text(
-            'Welcome to $appTitle',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: cinemaFontWhite,
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 16),
-          for (final m in MovieRepository().getMovies())
-                    MovieCard(movies: m),
-        ],
-      ),
+      drawer: const  NavDrawer(),
     );
   }
 }
