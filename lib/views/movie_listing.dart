@@ -65,8 +65,9 @@ class _MovieListingState extends State<MovieListing> {
                 const SizedBox(height: 15),
                 Row(
                   children: [
-                    const SizedBox(width: 20),
+      
                     Text('Tickets (${widget.movie.formattedPrice} each)'),
+                    const SizedBox(width: 20),
                     DropdownMenu<int>(
                       key: const Key('ticketDropdown'),
                       initialSelection: 0,
